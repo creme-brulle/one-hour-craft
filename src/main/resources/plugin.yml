@@ -1,0 +1,28 @@
+name: OneHour
+version: '${version}'
+main: com.github.kuruppa.onehour.OneHour
+api-version: 1.17
+authors: [ leo ]
+description: One hour building Plugin
+
+commands:
+  oh:
+    usage: /<Command> <start/stop/set [sec]>
+    permission: oh.command.test
+    permission-message: Permission denied
+    description: one hour count down
+
+permissions:
+  oh.*:
+    children:
+      oh.commands: true
+    description: oh permission description
+    default: op
+  oh.commands:
+    description: commands permission description
+    default: op
+  oh.commands.oh:
+    description: oh command permission description
+    default: false
+    children:
+      oh.commands: false
